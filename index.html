@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Club Privé - Gaybox</title>
+    <style>
+        body { background-color: #111; color: white; font-family: Arial, sans-serif; text-align: center; padding: 20px; }
+        .card { background-color: #222; padding: 20px; margin: 20px auto; border-radius: 10px; max-width: 400px; box-shadow: 0px 4px 8px rgba(255, 0, 0, 0.5); }
+        .button { background-color: red; color: white; border: none; padding: 12px; width: 100%; cursor: pointer; font-size: 16px; border-radius: 5px; }
+        .button:hover { background-color: darkred; }
+        input, textarea { width: 100%; padding: 12px; margin-top: 10px; background-color: #333; border: none; color: white; border-radius: 5px; }
+        input:focus, textarea:focus { outline: none; box-shadow: 0px 0px 5px rgba(255, 0, 0, 0.8); }
+        .footer { margin-top: 20px; padding: 10px; background-color: #222; border-radius: 5px; }
+        .image { width: 100%; border-radius: 10px; margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <h1>Club Privé - Gaybox</h1>
+    
+    <div class="card">
+        <h2>L'Expérience Gaybox</h2>
+        <p>Découvrez notre acteur phare et plongez dans une ambiance exclusive.</p>
+        <img src="image.jpg" alt="Acteur phare" class="image">
+    </div>
+    
+    <div class="card">
+        <h2>Réservez votre expérience</h2>
+        <form onsubmit="confirmReservation(event)">
+            <input type="text" id="name" placeholder="Votre nom" required>
+            <input type="date" id="date" required>
+            <textarea id="message" placeholder="Message (optionnel)"></textarea>
+            <button type="submit" class="button">Réserver</button>
+        </form>
+    </div>
+    
+    <div class="footer">
+        <p>&copy; 2025 Club Privé - Tous droits réservés.</p>
+        <p><a href="#" style="color: red;">Mentions légales</a> | <a href="#" style="color: red;">Contact</a></p>
+    </div>
+
+    <script>
+        function confirmReservation(event) {
+            event.preventDefault();
+            const name = document.getElementById("name").value;
+            const date = document.getElementById("date").value;
+            if (name && date) {
+                alert(`Réservation confirmée pour ${name} le ${date}`);
+            } else {
+                alert("Veuillez remplir tous les champs obligatoires.");
+            }
+        }
+    </script>
+</body>
+</html>
